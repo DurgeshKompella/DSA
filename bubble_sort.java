@@ -17,8 +17,7 @@ public class bubble_sort {
         }
     }
     public static void main(String[] args) {
-        int[] array = new int[]{1,2,3,4,5};
-        // int[] array = new int[]{13,46,24,52,20,9};
+        int[] array = new int[]{13,46,24,52,20,9};
         bubble(array);
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
