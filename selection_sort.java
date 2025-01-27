@@ -3,9 +3,9 @@ public class selection_sort {
 
     private static void selection(int[] array){
         int iteration = 0;
-        while (iteration < array.length){
+        while (iteration < array.length-1){
             int min_val_index = iteration;
-            for(int i=0; i<array.length-iteration; i++){
+            for(int i=1; i<array.length-iteration; i++){
                 if(array[iteration+i]<array[min_val_index]){
                     min_val_index = iteration+i;
                 }
