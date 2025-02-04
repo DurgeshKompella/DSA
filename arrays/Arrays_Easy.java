@@ -26,9 +26,17 @@ public class Arrays_Easy {
         String result =  "second min value : "+ Integer.toString(min_num_2) + " second max value : "+ Integer.toString(max_num_2) ;
         return result;
     }
+
+    private static String question3(int[] array){
+        for(int i=0; i<array.length-1; i++){
+            if(array[i+1] < array[i]) return "Array is not sorted in ASC";
+        }
+        return "Array is sorted in ASC";
+    }
     public static void main(String[] args) {
-        int[] arr = new int[]{2,5,1,3,0};
+        int[] arr = new int[]{1,2,3,4,5};
         System.out.println("Question 1 : "+ question1(arr));
         System.out.println("Question 2 : "+ question2(arr));
+        System.out.println("Question 3 : "+ question3(arr));
     }
 }
