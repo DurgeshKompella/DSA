@@ -51,10 +51,12 @@ public class Arrays_Easy {
         return result;
     }
     private static String question5(int[] array){
+        // Problem Statement: Given an array of N integers, left rotate the array by one place.
         int temp = array[array.length-1];
         for(int i=1; i<array.length; i++){
-            temp = array[array.length-1-i];
+            int temp_1 = array[array.length-1-i];
             array[array.length-1-i] = temp;
+            temp = temp_1;
         }
         array[array.length-1] = temp;
         String result = "";
@@ -64,11 +66,11 @@ public class Arrays_Easy {
         return result;
     }
     public static void main(String[] args) {
-        int[] arr = new int[]{1,1,2,2,2,3,3};
+        int[] arr = new int[]{1,1,2,2,3,3};
         System.out.println("Question 1 : "+ question1(arr));
         System.out.println("Question 2 : "+ question2(arr));
         System.out.println("Question 3 : "+ question3(arr));
         System.out.println("Question 4 : "+ question4(arr));
-        System.out.println("Question 4 : "+ question5(arr));
+        System.out.println("Question 5 : "+ question5(arr));
     }
 }
