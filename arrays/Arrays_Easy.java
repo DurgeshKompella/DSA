@@ -3,14 +3,32 @@ package arrays;
 public class Arrays_Easy {
 
     private static int question1(int[] array){
-        int max_num = 0;
+        // Problem Statement: Given an array, we have to find the largest element in the array.
+        int max_num = Integer.MIN_VALUE;
         for(int i=0; i< array.length; i++){
             if(max_num < array[i]) max_num = array[i];
         }
         return max_num;
     }
+
+    private static String question2(int[] array){
+        // Problem Statement: Given an array, find the second smallest and second largest element in the array. Print ‘-1’ in the event that either of them doesn’t exist.
+        int min_num_1 = Integer.MAX_VALUE;
+        int min_num_2 = Integer.MAX_VALUE;
+        int max_num_1 = Integer.MIN_VALUE;
+        int max_num_2 = Integer.MIN_VALUE;
+        for(int i=0; i< array.length; i++){
+            if(max_num_1 < array[i]){max_num_2 = max_num_1; max_num_1 = array[i];}
+            if(max_num_2 < array[i] && max_num_1 > array[i]){max_num_2 = array[i];}
+            if(min_num_1 > array[i]){min_num_2 = min_num_1; min_num_1 = array[i];}
+            if(min_num_2 > array[i] && min_num_1 < array[i]){min_num_2 = array[i];}
+        }
+        String result =  "second min value : "+ Integer.toString(min_num_2) + " second max value : "+ Integer.toString(max_num_2) ;
+        return result;
+    }
     public static void main(String[] args) {
         int[] arr = new int[]{2,5,1,3,0};
         System.out.println("Question 1 : "+ question1(arr));
+        System.out.println("Question 2 : "+ question2(arr));
     }
 }
