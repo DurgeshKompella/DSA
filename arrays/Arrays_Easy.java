@@ -28,15 +28,33 @@ public class Arrays_Easy {
     }
 
     private static String question3(int[] array){
+        // Problem Statement: Given an array of size n, write a program to check if the given array is sorted in (ascending / Increasing / Non-decreasing) order or not. If the array is sorted then return True, Else return False.
         for(int i=0; i<array.length-1; i++){
             if(array[i+1] < array[i]) return "Array is not sorted in ASC";
         }
         return "Array is sorted in ASC";
     }
+
+    private static String question4(int[] array){
+        // Problem Statement: Given an integer array sorted in non-decreasing order, remove the duplicates in place such that each unique element appears only once. The relative order of the elements should be kept the same.
+        int j=0;
+        for(int i=0; i< array.length; i++){
+            if(array[i] > array[j]){
+                j++;
+                array[j] = array[i];
+            }
+        }
+        String result = "";
+        for(int i=0; i<=j; i++){
+            result = result + Integer.toString(array[i]) + " ,";
+        }
+        return result;
+    }
     public static void main(String[] args) {
-        int[] arr = new int[]{1,2,3,4,5};
+        int[] arr = new int[]{1,1,2,2,2,3,3};
         System.out.println("Question 1 : "+ question1(arr));
         System.out.println("Question 2 : "+ question2(arr));
         System.out.println("Question 3 : "+ question3(arr));
+        System.out.println("Question 4 : "+ question4(arr));
     }
 }
